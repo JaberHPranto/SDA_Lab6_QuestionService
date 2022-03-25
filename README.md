@@ -1,7 +1,7 @@
 
 # Question Solve Service
 
-API's for creation questions and fetching all questions
+API's for creating questions and fetching all questions
 
 
 ## API Reference
