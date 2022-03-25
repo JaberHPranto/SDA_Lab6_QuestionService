@@ -15,4 +15,14 @@ export const postQuestion = async (req, res) => {
   }
 };
 
-// get all questions
+// Get all questions
+export const getQuestions = async (req, res) => {
+  try {
+    const questions = await Question.find({});
+    res.status(200).json(questions);
+  } catch (err) {
+    res.status(401).json({
+      error: err.message,
+    });
+  }
+};

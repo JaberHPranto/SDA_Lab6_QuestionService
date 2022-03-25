@@ -1,7 +1,10 @@
 import dotenv from "dotenv";
 import express from "express";
 import connectDB from "./config/db.js";
-import { postQuestion } from "./controllers/questionController.js";
+import {
+  getQuestions,
+  postQuestion,
+} from "./controllers/questionController.js";
 
 const app = express();
 dotenv.config();
@@ -14,6 +17,7 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.get("/", (req, res) => {
   return res.send("Welcome to Question Solver 👋");
 });
+app.get("/api/questions", getQuestions);
 app.post("/api/questions", postQuestion);
 
 // connection
